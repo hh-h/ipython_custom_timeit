@@ -6,14 +6,22 @@ Installed custom_timeit.py. To use it, type:
 
 In [2]: %load_ext custom_timeit
 
-In [3]: %timeit2 123
+In [3]: %timeit2 -g 123
 100000000 loops
-   AVG of 3: 10.7 ns per loop
-  BEST of 3: 10.7 ns per loop
- WORST of 3: 10.7 ns per loop
-
+   AVG of 3: 7.46 ns per loop
+  BEST of 3: 7.32 ns per loop
+ WORST of 3: 7.6 ns per loop
+```
+it also has feature to enable garbage collector
+```
+In [4]: %timeit2 123
+100000000 loops
+   AVG of 3: 7.2 ns per loop
+  BEST of 3: 7.18 ns per loop
+ WORST of 3: 7.24 ns per loop
 ```
 
+# autoload
 then in ipython_config.py
 ```
 c.InteractiveShellApp.extensions = [
